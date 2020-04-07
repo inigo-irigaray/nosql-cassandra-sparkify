@@ -18,7 +18,16 @@ The first dataset is a directory of data files in CSV format called ``event_data
 
 ### ``setup.py``
 
-<p align=justify>The script specifies the SQL commands to DROP and CREATE the songplays, users, songs, artists and time tables in the relational database, as well as the INSERT command to fill in the data and a specific SELECT utility command to help in the processing of data for the songplays table.</p>
+<p align=justify>The script creates a single unified file containing all data from the CSV event data files, as well as the non-relational database, if required to do so by the user in the command line.</p>
+
+Command Line Arguments:
+
+        --update                action = 'store_true'                                   help = Update unified event data file.
+        --path                  default = None                  type = str              help = Path to metadata.
+        --create_keyspace       action = 'store_true'                                   help = Create new keyspace.
+        --session               default = 'local'               type = str              help = Name of the Cassandra session to connect.
+        --keyspace              default = 'sparkify'            type = str              help = Name of the keyspace to create/open.
+        
 
 ### ``song_history.py``
 <img src=https://github.com/inigo-irigaray/nosql-cassandra-sparkify/blob/master/imgs/song_history.png width=30% height=30% align='right'>
