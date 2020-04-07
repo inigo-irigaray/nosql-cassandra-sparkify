@@ -18,7 +18,7 @@ The first dataset is a directory of data files in CSV format called ``event_data
 
 ### ``setup.py``
 
-<p align=justify>The script creates a single unified file containing all data from the CSV event data files, as well as the non-relational database, if required to do so by the user in the command line.</p>
+<p align=justify>The script creates a single unified file containing all data from the CSV event data files; as well as the non-relational database, if required to do so by the user in the command line.</p>
 
 Command Line Arguments:
 
@@ -30,10 +30,16 @@ Command Line Arguments:
         
 
 ### ``song_history.py``
+
 <img src=https://github.com/inigo-irigaray/nosql-cassandra-sparkify/blob/master/imgs/song_history.png width=30% height=30% align='right'>
+
 <p align=justify><b>GOAL:</b> Retrieve the artist, song title and song's length in the music app history that was heard during sessionId = 338 and itemInSession = 4</p>
 
-<p align=justify>The script defines the functions to create the Sparkify relational database, create and drop the five tables aforementioned from the imported SQL commands in the previous script. It can be run as standalone to create empty tables or as part of the ETL pipeline in the following script.</p>
+<p align=justify>The script defines in Apache Cassandra the queries to drop and create a song_history table in terms of the goal stated above; extract, transform and load the necessary data from the event data file; and query the relevant information from the table.</p>
+
+<p align=justify>For additional flexibility and functionality of the program, the code includes a number of arguments that allows the user to run it:</p>
+
+<p align=justify>1. As a standalone creating </p>
 
 Command Line Arguments:
 
