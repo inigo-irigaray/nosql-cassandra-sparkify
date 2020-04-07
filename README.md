@@ -39,7 +39,11 @@ Command Line Arguments:
 
 <p align=justify>For additional flexibility and functionality of the program, the code includes a number of arguments that allows the user to run it:</p>
 
-<p align=justify>1. As a standalone creating </p>
+<p align=justify>1. As a standalone, creating a keyspace, table, updating and retrieving information for the default sessionId and itemInSession.</p>
+
+<p align=justify>2. Loading an existing keyspace, creating the table, updating and retrieving information for the default sessionId and itemInSession.</p>
+
+<p align=justify>3. Loading an existing keyspace and song_history table, retrieving information for the default or user-determined sessionId and itemInSession.</p>
 
 Command Line Arguments:
 
@@ -52,9 +56,20 @@ Command Line Arguments:
         --item_in_session       default = 4                     type = int              help = Item in Session filter.
 
 ### ``user_history.py`` 
+
 <img src=https://github.com/inigo-irigaray/nosql-cassandra-sparkify/blob/master/imgs/user_history.png width=30% height=30% align='left'>
-<p align=justify><b>GOAL:</b> Retrieve only the following: name of artist, song (sorted by itemInSession) and user (first and last name) for userid = 10, sessionid = 182</p>
-<p align=justify>The script extracts, transforms and loads the data into the required tables in the Sparkify database from the song and log files in JSON format. It can additionally create the required tables and dataset if predetermined by the user with the --create_db argument in the command line.</p>
+
+<p align=justify><b>GOAL:</b> Retrieve every user name (first and last) in my music app history who listened to the song 'All Hands Against His Own'</p>
+
+<p align=justify>The script defines in Apache Cassandra the queries to drop and create a user_history table in terms of the goal stated above; extract, transform and load the necessary data from the event data file; and query the relevant information from the table.</p>
+
+<p align=justify>For additional flexibility and functionality of the program, the code includes a number of arguments that allows the user to run it:</p>
+
+<p align=justify>1. As a standalone, creating a keyspace, table, updating and retrieving information for the default song_title.</p>
+
+<p align=justify>2. Loading an existing keyspace, creating the table, updating and retrieving information for the default song_title.</p>
+
+<p align=justify>3. Loading an existing keyspace and user_history table, retrieving information for the default or user-determined song_title.</p>
 
 Command Line Arguments:
 
@@ -66,9 +81,20 @@ Command Line Arguments:
         --song_title            default = "'All Hands Against His Own'"                 help = Song title filter. The title of the song must be a substring of the input string.
 
 ### ``artist_history.py``
+
 <img src=https://github.com/inigo-irigaray/nosql-cassandra-sparkify/blob/master/imgs/artist_history.png width=30% height=30% align='right'>
-<p align=justify><b>GOAL:</b> Retrieve every user name (first and last) in my music app history who listened to the song 'All Hands Against His Own'</p>
-<p align=justify>The script extracts, transforms and loads the data into the required tables in the Sparkify database from the song and log files in JSON format. It can additionally create the required tables and dataset if predetermined by the user with the --create_db argument in the command line.</p>
+
+<p align=justify><b>GOAL:</b> Retrieve only the following: name of artist, song (sorted by itemInSession) and user (first and last name) for userid = 10, sessionid = 182</p>
+
+<p align=justify>The script defines in Apache Cassandra the queries to drop and create a artist_history table in terms of the goal stated above; extract, transform and load the necessary data from the event data file; and query the relevant information from the table.</p>
+
+<p align=justify>For additional flexibility and functionality of the program, the code includes a number of arguments that allows the user to run it:</p>
+
+<p align=justify>1. As a standalone, creating a keyspace, table, updating and retrieving information for the default userId and sessionId.</p>
+
+<p align=justify>2. Loading an existing keyspace, creating the table, updating and retrieving information for the default userId and sessionId.</p>
+
+<p align=justify>3. Loading an existing keyspace and artist_history table, retrieving information for the default or user-determined userId and sessionId.</p>
 
 Command Line Arguments:
 
