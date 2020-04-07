@@ -37,11 +37,13 @@ Command Line Arguments:
 
 Command Line Arguments:
 
-        --update                action = 'store_true'                                   help = Update unified event data file.
         --path                  default = None                  type = str              help = Path to metadata.
-        --create_keyspace       action = 'store_true'                                   help = Create new keyspace.
         --session               default = 'local'               type = str              help = Name of the Cassandra session to connect.
         --keyspace              default = 'sparkify'            type = str              help = Name of the keyspace to create/open.
+        --update                action = 'store_true'                                   help = Update unified event data file.
+        --create_keyspace       action = 'store_true'                                   help = Create new keyspace.
+        --session_id            default = 338                   type = int              help = Session ID filter.
+        --item_in_session       default = 4                     type = int              help = Item in Session filter.
 
 ### ``user_history.py`` 
 <img src=https://github.com/inigo-irigaray/nosql-cassandra-sparkify/blob/master/imgs/user_history.png width=30% height=30% align='left'>
@@ -50,11 +52,12 @@ Command Line Arguments:
 
 Command Line Arguments:
 
-        --update                action = 'store_true'                                   help = Update unified event data file.
         --path                  default = None                  type = str              help = Path to metadata.
-        --create_keyspace       action = 'store_true'                                   help = Create new keyspace.
         --session               default = 'local'               type = str              help = Name of the Cassandra session to connect.
         --keyspace              default = 'sparkify'            type = str              help = Name of the keyspace to create/open.
+        --update                action = 'store_true'                                   help = Update unified event data file.
+        --create_keyspace       action = 'store_true'                                   help = Create new keyspace.
+        --song_title            default = "'All Hands Against His Own'"                 help = Song title filter. The title of the song must be a substring of the input string.
 
 ### ``artist_history.py``
 <img src=https://github.com/inigo-irigaray/nosql-cassandra-sparkify/blob/master/imgs/artist_history.png width=30% height=30% align='right'>
@@ -63,11 +66,13 @@ Command Line Arguments:
 
 Command Line Arguments:
 
-        --update                action = 'store_true'                                   help = Update unified event data file.
         --path                  default = None                  type = str              help = Path to metadata.
-        --create_keyspace       action = 'store_true'                                   help = Create new keyspace.
         --session               default = 'local'               type = str              help = Name of the Cassandra session to connect.
         --keyspace              default = 'sparkify'            type = str              help = Name of the keyspace to create/open.
+        --update                action = 'store_true'                                   help = Update unified event data file.
+        --create_keyspace       action = 'store_true'                                   help = Create new keyspace.
+        --user_id               default = 10                    type=int                help = User ID filter.
+        --session_id            default = 182                   type=int                help = Session ID filter.
 
 ## Running the Code
 
