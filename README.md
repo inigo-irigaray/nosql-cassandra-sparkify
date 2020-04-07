@@ -35,15 +35,39 @@ Command Line Arguments:
 
 <p align=justify>The script defines the functions to create the Sparkify relational database, create and drop the five tables aforementioned from the imported SQL commands in the previous script. It can be run as standalone to create empty tables or as part of the ETL pipeline in the following script.</p>
 
+Command Line Arguments:
+
+        --update                action = 'store_true'                                   help = Update unified event data file.
+        --path                  default = None                  type = str              help = Path to metadata.
+        --create_keyspace       action = 'store_true'                                   help = Create new keyspace.
+        --session               default = 'local'               type = str              help = Name of the Cassandra session to connect.
+        --keyspace              default = 'sparkify'            type = str              help = Name of the keyspace to create/open.
+
 ### ``user_history.py`` 
 <img src=https://github.com/inigo-irigaray/nosql-cassandra-sparkify/blob/master/imgs/user_history.png width=30% height=30% align='left'>
 <p align=justify><b>GOAL:</b> Retrieve only the following: name of artist, song (sorted by itemInSession) and user (first and last name) for userid = 10, sessionid = 182</p>
 <p align=justify>The script extracts, transforms and loads the data into the required tables in the Sparkify database from the song and log files in JSON format. It can additionally create the required tables and dataset if predetermined by the user with the --create_db argument in the command line.</p>
 
+Command Line Arguments:
+
+        --update                action = 'store_true'                                   help = Update unified event data file.
+        --path                  default = None                  type = str              help = Path to metadata.
+        --create_keyspace       action = 'store_true'                                   help = Create new keyspace.
+        --session               default = 'local'               type = str              help = Name of the Cassandra session to connect.
+        --keyspace              default = 'sparkify'            type = str              help = Name of the keyspace to create/open.
+
 ### ``artist_history.py``
 <img src=https://github.com/inigo-irigaray/nosql-cassandra-sparkify/blob/master/imgs/artist_history.png width=30% height=30% align='right'>
 <p align=justify><b>GOAL:</b> Retrieve every user name (first and last) in my music app history who listened to the song 'All Hands Against His Own'</p>
 <p align=justify>The script extracts, transforms and loads the data into the required tables in the Sparkify database from the song and log files in JSON format. It can additionally create the required tables and dataset if predetermined by the user with the --create_db argument in the command line.</p>
+
+Command Line Arguments:
+
+        --update                action = 'store_true'                                   help = Update unified event data file.
+        --path                  default = None                  type = str              help = Path to metadata.
+        --create_keyspace       action = 'store_true'                                   help = Create new keyspace.
+        --session               default = 'local'               type = str              help = Name of the Cassandra session to connect.
+        --keyspace              default = 'sparkify'            type = str              help = Name of the keyspace to create/open.
 
 ## Running the Code
 
