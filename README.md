@@ -108,17 +108,30 @@ Command Line Arguments:
 
 ## Running the Code
 
-### Option 1. Creating Databases and Tables from Scratch:
+### Option 1.
 
-#### <p align=justify><b>1.A. Creating the Sparkify database and tables required from ``create_tables.py``first, and then extracting, transforming and loading the data from ``etl.py``: </b></p>
+#### <p align=justify><b>Creating the 'sparkify' keyspace and unified event data file: </b></p>
 
-        $python3 create_tables.py
-        $python3 etl.py
+        $python3 setup.py --create_keyspace --update
       
-#### 1.B. Performing all actions directly from ``etl.py``:
+#### <p align=justify><b>Creating the tables; extracting, transforming, and loading the data into them; and retrieving the default required data for each one:</b></p>
 
-        $python3 etl.py --create_db
+        $python3 song_history.py --update
+        $python3 user_history.py --update
+        $python3 artist_history.py --update
         
-### Option 2. Extracting, transforming and loading the data into the required existing tables and database:
+### Option 2.
 
-        $pyhton3 etl.py
+#### <p align=justify><b>Creating the 'sparkify' keyspace and unified event data file from one of the table files (in this case song_history.py); creating the rest of the tables; extracting, transforming, and loading the data into them; and retrieving the default required data for each one: </b></p>
+
+        $pyhton3 song_history.py --create_keyspace --update
+        $python3 user_history.py --update
+        $python3 artist_history.py --update
+        
+### Option 3.
+
+#### <p align=justify><b>Retrieving the user-determined, required data for existing tables: </b></p>
+
+        $pyhton3 song_history.py --session_id=  --item_in_session=
+        $python3 user_history.py --song_title=
+        $python3 artist_history.py --user_id=  --session_id=
