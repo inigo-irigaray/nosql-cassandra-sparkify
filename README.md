@@ -126,7 +126,7 @@ Command Line Arguments:
 
 #### <p align=justify><b>Creating the 'sparkify' keyspace and unified event data file from one of the table files (in this case song_history.py); creating the rest of the tables; extracting, transforming, and loading the data into them; and retrieving the default required data for each one: </b></p>
 
-        $pyhton3 song_history.py --create_keyspace --update
+        $python3 song_history.py --create_keyspace --update
         $python3 user_history.py --update
         $python3 artist_history.py --update
         
@@ -134,6 +134,6 @@ Command Line Arguments:
 
 #### <p align=justify><b>Retrieving the user-determined, required data for existing tables: </b></p>
 
-        $pyhton3 song_history.py --session_id=  --item_in_session=
-        $python3 user_history.py --song_title=
-        $python3 artist_history.py --user_id=  --session_id=
+        $pyhton3 song_history.py --session_id=744 --item_in_session=37
+        $python3 user_history.py --song_title="'Alejandro'"
+        $python3 artist_history.py --user_id=88 --session_id=744
