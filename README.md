@@ -108,6 +108,8 @@ Command Line Arguments:
 
 ## Running the Code
 
+<p align=justify>The code has been designed to allow for many different runs depending on the needs of Sparkify, including creating different keyspaces for each database, one common keyspace each time the code is run, creating the tables in an existing keyspace, and retrieving the data after which the tables are modeled without the need to updating the data within them, among others. Here are three basic and useful options to run the code:</p>
+
 ### Option 1.
 
 #### <p align=justify><b>Creating the 'sparkify' keyspace and unified event data file: </b></p>
