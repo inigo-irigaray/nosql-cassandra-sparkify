@@ -52,7 +52,7 @@ def create_keyspace(config):
     """"""
     session = config.session
     keyspace = config.keyspace
-    cluster = Cluster() #['127.0.0.1', '9042']
+    cluster = Cluster(['127.0.0.1', '9042'])
     print("Connection to session %s..." % session)
     if session == 'local':
         session = cluster.connect()
