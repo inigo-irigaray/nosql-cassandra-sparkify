@@ -35,6 +35,12 @@ Command Line Arguments:
 
 <p align=justify><b>GOAL:</b> Retrieve the artist, song title and song's length in the music app history that was heard during sessionId = 338 and itemInSession = 4</p>
 
+<p align=justify><b>QUERY:</b></p>
+
+        SELECT artist, song_title, song_length
+        FROM song_history
+        WHERE session_id=338 and item_in_session=4
+
 <p align=justify>The script defines in Apache Cassandra the queries to drop and create a song_history table in terms of the goal stated above; extract, transform and load the necessary data from the event data file; and query the relevant information from the table.</p>
 
 <p align=justify>For additional flexibility and functionality of the program, the code includes a number of arguments that allows the user to run it:</p>
@@ -61,6 +67,12 @@ Command Line Arguments:
 
 <p align=justify><b>GOAL:</b> Retrieve every user name (first and last) in my music app history who listened to the song 'All Hands Against His Own'</p>
 
+<p align=justify><b>QUERY:</b></p>
+
+        SELECT first_name, last_name
+        FROM user_history
+        WHERE song_title='All Hands Against His Own'
+
 <p align=justify>The script defines in Apache Cassandra the queries to drop and create a user_history table in terms of the goal stated above; extract, transform and load the necessary data from the event data file; and query the relevant information from the table.</p>
 
 <p align=justify>For additional flexibility and functionality of the program, the code includes a number of arguments that allows the user to run it:</p>
@@ -84,7 +96,13 @@ Command Line Arguments:
 
 <img src=https://github.com/inigo-irigaray/nosql-cassandra-sparkify/blob/master/imgs/artist_history.png width=30% height=30% align='right'>
 
-<p align=justify><b>GOAL:</b> Retrieve only the following: name of artist, song (sorted by itemInSession) and user (first and last name) for userid = 10, sessionid = 182</p>
+<p align=justify><b>GOAL:</b> Retrieve only the following: name of artist, song (sorted by itemInSession) and user (first and last name) for userId = 10, sessionId = 182</p>
+
+<p align=justify><b>QUERY:</b></p>
+
+        SELECT artist, song_title, first_name, last_name, item_in_session
+        FROM artist_history
+        WHERE user_id=10 and session_id=182
 
 <p align=justify>The script defines in Apache Cassandra the queries to drop and create a artist_history table in terms of the goal stated above; extract, transform and load the necessary data from the event data file; and query the relevant information from the table.</p>
 
@@ -132,7 +150,7 @@ Command Line Arguments:
         
 ### Option 3.
 
-#### <p align=justify><b>Retrieving the user-determined, required data for existing tables: </b></p>
+#### <p align=justify><b>Retrieving the user-determined data from existing tables, given the nature of the queries they were modeled after: </b></p>
 
         $pyhton3 song_history.py --session_id=744 --item_in_session=37
         $python3 user_history.py --song_title="'Alejandro'"
