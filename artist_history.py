@@ -22,7 +22,7 @@ create_artist_history_table = ("CREATE TABLE IF NOT EXISTS artist_history (user_
                                                                            song_title text,\
                                                                            first_name text,\
                                                                            last_name text,\
-                                                                           PRIMARY KEY (user_id, session_id, item_in_session)\
+                                                                           PRIMARY KEY ((user_id, session_id), item_in_session)\
                                                                            )"
                               )
 
