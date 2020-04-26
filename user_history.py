@@ -19,7 +19,7 @@ create_user_history_table = ("CREATE TABLE IF NOT EXISTS user_history (song_titl
                                                                        user_id int,\
                                                                        first_name text,\
                                                                        last_name text,\
-                                                                       PRIMARY KEY (song_title, first_name, last_name)\
+                                                                       PRIMARY KEY (song_title, user_id)\
                                                                        )"
                             )
 
