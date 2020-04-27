@@ -72,7 +72,7 @@ Command Line Arguments:
         SELECT first_name, last_name
         FROM user_history
         WHERE song_title='All Hands Against His Own'
-
+ 
 <p align=justify>The script defines in Apache Cassandra the queries to drop and create a user_history table in terms of the goal stated above; extract, transform and load the necessary data from the event data file; and query the relevant information from the table.</p>
 
 <p align=justify>For additional flexibility and functionality of the program, the code includes a number of arguments that allows the user to run it:</p>
